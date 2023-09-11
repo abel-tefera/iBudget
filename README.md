@@ -28,7 +28,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# Recipe app <a name="about-project"></a>
+# iBudget <a name="about-project"></a>
 
 > An elegant budgeting app to track your spendings. Built using Ruby on Rails. 
 
@@ -79,18 +79,18 @@ In order to run this project you need:
 - Installed Ruby on Rails
 - Create a local directory that you want to clone the repository.
 - Open the command prompt in the created directory.
-- On the terminal run this command git clone https://github.com/abel-tefera/recipe-app.git
+- On the terminal run this command git clone https://github.com/abel-tefera/iBudget.git
 
 ### Setup
 
 Clone this repository to your desired folder:
 
 ```sh
-git clone https://github.com/abel-tefera/recipe-app.git
+git clone https://github.com/abel-tefera/iBudget.git
 ```
 
 ```sh
-cd recipe-app
+cd iBudget
 ```
 
 ```sh

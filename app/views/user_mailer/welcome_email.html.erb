@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+  </head>
+  <body style="display: flex; flex-direction: column; justify-content: center">
+    <h1 style="margin: 0.25rem 0 0.25rem 0;">Welcome to
+      <em><span style="color: green">iBudget</span></em>,
+      <%= @user.name %>.</h1>
+    <h4 style="margin: 0.125rem 0 0.125rem 0;">
+      To login to the site, just follow this link:
+      <a href="<%= @url %>">iBudget Login</a>.
+    </h4>
+    <p style="margin: 0.125rem 0 0.125rem 0;">Thanks for joining and have a lovely day!</p>
+  </body>
+</html>
