@@ -1,3 +1,13 @@
 <div class="flex flex-col items-center">
   <h1 class="text-6xl my-4"><%= @group.name %></h1>
+  <h2 class="text-3xl">Total ||
+    $<%= @group.total_expense %></h2>
+  <% @group.expenses.each do |expense| %>
+    <p><%= expense.name %>
+      || $<%= expense.amount %></p>
+  <% end %>
+  <%= link_to "New expense",
+  new_group_expense_path(@group),
+  class: "font-medium text-blue-600 dark:text-blue-500  hover:underline" %>
+
 </div>
