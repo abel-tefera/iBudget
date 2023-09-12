@@ -1,5 +1,6 @@
 class ExpensesController < ApplicationController
   before_action :set_group, only: %i[new create]
+  before_action :authenticate_user!
 
   def new
     @expense = Expense.new(group_ids: [params[:group_id]])

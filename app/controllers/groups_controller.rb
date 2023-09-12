@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: %i[destroy]
+  before_action :authenticate_user!
 
   def index
     @groups = Group.includes(:expenses).where(user: current_user).order('created_at ASC')

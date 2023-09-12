@@ -1,11 +1,4 @@
 Rails.application.routes.draw do
-  # get 'expenses/index'
-  # get 'expenses/new'
-  # get 'expenses/create'
-  # get 'groups/index'
-  # get 'groups/new'
-  # get 'groups/show'
-  # get 'groups/create'
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -16,5 +9,7 @@ Rails.application.routes.draw do
     resources :expenses, only: [:new, :create]
   end
 
-  root to: 'home#index'
+  get 'splash_screen', to: 'home#index'
+
+  root to: 'groups#index'
 end
