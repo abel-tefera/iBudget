@@ -4,6 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :expenses, foreign_key: :author_id, dependent: :destroy
+  has_many :groups, dependent: :destroy
+
+  validates :name, presence: true
+
   after_commit :send_welcome_email, on: :create
 
   private
