@@ -1,0 +1,41 @@
+<%= button_to("Log Out", destroy_user_session_path, method: :delete) %>
+
+<div class="flex flex-col items-center">
+  <h1 class="text-6xl my-4">Categories</h1>
+
+  <div>
+    <% @groups.each do |group| %>
+      <div
+        class="
+          flex
+          flex-col
+          p-4
+          border-solid
+          border-2
+          border-black
+          items-center
+          my-4
+        "
+      >
+        <div class="flex flex-row">
+          <p class="text-4xl me-2">
+            <%= link_to group.name,
+            group,
+            class: "font-medium text-blue-600 dark:text-blue-500  hover:underline" %>
+          </p>
+        </div>
+        <div class=" flex self-start ">
+          <%= button_to "Remove",
+          group_path(group),
+          method: :delete,
+          class: "font-medium text-blue-600 dark:text-blue-500  hover:underline" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <%= link_to "New group",
+  new_group_path,
+  class: "font-medium text-blue-600 dark:text-blue-500  hover:underline" %>
+
+</div>

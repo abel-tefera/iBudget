@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_11_113520) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_12_122154) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -37,8 +37,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_11_113520) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.string "icon"
-    t.bigint "author_id"
-    t.index ["author_id"], name: "index_groups_on_author_id"
+    t.bigint "user_id", null: false
+    t.float "total_expense", default: 0.0
+    t.index ["user_id"], name: "index_groups_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -50,6 +51,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_11_113520) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.integer "role", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -57,5 +59,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_11_113520) do
   add_foreign_key "expense_groups", "expenses"
   add_foreign_key "expense_groups", "groups"
   add_foreign_key "expenses", "users", column: "author_id", name: "author_id"
-  add_foreign_key "groups", "users", column: "author_id", name: "author_id"
+  add_foreign_key "groups", "users"
 end
