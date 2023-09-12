@@ -4,7 +4,7 @@ class ExpensesController < ApplicationController
   before_action :authenticate_user!
 
   load_and_authorize_resource :group
-  load_and_authorize_resource :expense, :through => :group
+  load_and_authorize_resource :expense, through: :group
 
   def new
     @expense = Expense.new(group_ids: [params[:group_id]])
