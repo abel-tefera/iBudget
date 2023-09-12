@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'expenses/index'
+  get 'expenses/new'
+  get 'expenses/create'
   # get 'groups/index'
   # get 'groups/new'
   # get 'groups/show'
