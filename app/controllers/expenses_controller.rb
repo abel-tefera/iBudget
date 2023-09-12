@@ -1,5 +1,6 @@
 class ExpensesController < ApplicationController
-  before_action :set_group, only: %i[new create]
+  before_action :set_group, only: %i[new create destroy]
+  before_action :set_expense, only: %i[destroy]
   before_action :authenticate_user!
 
   def new
@@ -16,6 +17,15 @@ class ExpensesController < ApplicationController
       redirect_to "/groups/#{params[:group_id]}", notice: 'Transaction was successfully created.'
     else
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @expense.destroy
+
+    respond_to do |format|
+      format.html { redirect_to "/groups/#{params[:group_id]}", notice: 'Expense was successfully destroyed.' }
+      format.json { head :no_content }
     end
   end
 
