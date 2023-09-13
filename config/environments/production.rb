@@ -91,5 +91,5 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.relative_url_root = "/iBudget"
+  # config.relative_url_root = "/iBudget"
 end
