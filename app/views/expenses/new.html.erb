@@ -1,4 +1,8 @@
-<div>
-  <h2>New Transaction</h2>
+<%= render "shared/navbar",
+title: "New Transaction",
+action_id: "new_transaction",
+action_text: "Save" %>
+
+<div class="flex flex-col items-center mt-4">
   <%= render "form", expense: @expense %>
 </div>

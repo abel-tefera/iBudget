@@ -1,7 +1,7 @@
 <%= render "shared/navbar", title: "Categories", menu: true %>
 
 <div class="flex flex-col items-center">
-  <div class="w-full px-4">
+  <div class="w-full px-4 overflow-y-scroll max-h-categories mb-5">
     <% @groups.each do |group| %>
       <%= link_to group do %>
         <div
@@ -35,9 +35,9 @@
       <% end %>
     <% end %>
   </div>
-  <footer class="flex items-center p-4 bg-secondary absolute bottom-0 w-full">
-    <%= link_to "Add a Category",
-    new_group_path,
-    class: "p-4 border border-white text-white w-full text-center rounded uppercase" %>
-  </footer>
 </div>
+<footer class="flex items-center p-4 bg-secondary absolute bottom-0 w-full">
+  <%= link_to "Add a Category",
+  new_group_path,
+  class: "p-4 border border-white text-white w-full text-center rounded uppercase" %>
+</footer>

@@ -22,6 +22,10 @@ module.exports = {
       },
       minHeight: {
         '4/5': '80vh'
+      },
+      maxHeight: {
+        'transactions': '72vh',
+        'categories': '80vh'
       }
     },
   },
