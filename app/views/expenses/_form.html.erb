@@ -1,37 +1,52 @@
-<%= form_with(model: expense, url: group_expenses_path) do |form| %>
+<%= form_with(model: expense, url: group_expenses_path, id: 'new_transaction', class: 'w-full') do |form| %>
   <% if expense.errors.any? %>
-    <div style="color: red">
+    <div class="flex flex-col items-center mb-2" style="color: red">
       <h2><%= pluralize(expense.errors.count, "error") %>
         prohibited this expense from being saved:</h2>
 
       <ul>
         <% expense.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+          <li>#
+            <%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div>
-    <%= form.text_field :name, placeholder: "Name" %>
+  <div class="field">
+    <%= form.text_field :name,
+                    placeholder: "Name",
+                    autofocus: true,
+                    required: true,
+                    class: "w-full border-none" %>
   </div>
+  <hr class="text-gray-300 ms-2"/>
 
-  <div>
-    <%= form.text_field :amount, placeholder: "Amount" %>
+  <div class="field">
+    <%= form.text_field :amount,
+                    placeholder: "Amount",
+                    required: true,
+                    class: "w-full border-none" %>
   </div>
+  <hr class="text-gray-300 ms-2"/>
 
-  <div>
+  <div class="field">
+
+    <%= form.select :icon,
+                Expense::ICONS.invert,
+                { include_blank: "Select Icon" },
+                { required: true, class: "w-full border-none" } %>
+  </div>
+  <hr class="text-gray-300 ms-2"/>
+
+  <div class="field">
     <% current_user.groups.each do |group| %>
-      <div>
+      <div class="p-2 bg-white">
         <%= check_box_tag "expense[group_ids][]",
         group.id,
         @expense.group_ids.include?(group.id) %>
         <%= form.label group.name %>
       </div>
     <% end %>
-  </div>
-
-  <div>
-    <%= form.submit "Save", class: "submit" %>
   </div>
 <% end %>

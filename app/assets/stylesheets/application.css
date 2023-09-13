@@ -13,3 +13,33 @@
  *= require_tree .
  *= require_self
  */
+
+.notice,
+.alert {
+  border-radius: 2px;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  animation: hiding 5s forwards;
+}
+
+.notice {
+  background: #4bb543;
+}
+
+.alert {
+  background: #ff9494;
+}
+
+@keyframes hiding {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
