@@ -1,41 +1,41 @@
-<%= button_to("Log Out", destroy_user_session_path, method: :delete) %>
+<%= render "shared/navbar", title: "Categories", menu: true %>
 
 <div class="flex flex-col items-center">
-  <h1 class="text-6xl my-4">Categories</h1>
-
-  <div>
+  <div class="w-full px-4">
     <% @groups.each do |group| %>
       <div
         class="
           flex
-          flex-col
-          p-4
-          border-solid
-          border-2
-          border-black
+          flex-row
+          py-4
           items-center
+          border-solid
+          border
+          bg-white
+          border-gray-400
           my-4
+          w-full
+          shadow-md
         "
       >
-        <div class="flex flex-row">
-          <p class="text-4xl me-2">
-            <%= link_to group.name,
-            group,
-            class: "font-medium text-blue-600 dark:text-blue-500  hover:underline" %>
+        <div class="ms-2">
+          <i class="fa-solid fa-basket-shopping fa-2xl"></i>
+        </div>
+        <div class="flex flex-col mx-4 self-start w-full">
+          <%= link_to group.name, group, class: "font-medium text-tertiary text-2xl" %>
+          <p class="text-tertiary"><%= group.created_at.strftime("%d-%b-%Y") %>
           </p>
         </div>
-        <div class=" flex self-start ">
-          <%= button_to "Remove",
-          group_path(group),
-          method: :delete,
-          class: "font-medium text-blue-600 dark:text-blue-500  hover:underline" %>
+        <div class="me-2 mt-1 self-start font-bold">
+          <p>
+            $<%= group.total_expense %></p>
         </div>
       </div>
     <% end %>
   </div>
-
-  <%= link_to "New group",
-  new_group_path,
-  class: "font-medium text-blue-600 dark:text-blue-500  hover:underline" %>
-
+  <footer class="flex items-center p-4 bg-secondary absolute bottom-0 w-full">
+    <%= link_to "Add a Category",
+    new_group_path,
+    class: "p-4 border border-white text-white w-full text-center rounded uppercase" %>
+  </footer>
 </div>
