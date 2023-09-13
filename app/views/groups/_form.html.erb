@@ -6,7 +6,8 @@
 
       <ul>
         <% group.errors.each do |error| %>
-          <li># <%= error.full_message %></li>
+          <li>#
+            <%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
@@ -25,12 +26,10 @@
   <hr class="text-gray-300 ms-2"/>
 
   <div class="field">
-    <%= form.text_field :icon,
-                    required: true,
-                    class: "w-full border-none",
-                    placeholder: "Icon" %>
-    <% group.errors.full_messages_for(:icon).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
+
+    <%= form.select :icon,
+                Group::ICONS.invert,
+                { include_blank: 'Select Icon' },
+                { required: true, class: "w-full border-none" } %>
   </div>
 <% end %>

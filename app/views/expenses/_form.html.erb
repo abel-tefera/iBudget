@@ -31,6 +31,15 @@
   <hr class="text-gray-300 ms-2"/>
 
   <div class="field">
+
+    <%= form.select :icon,
+                Expense::ICONS.invert,
+                { include_blank: "Select Icon" },
+                { required: true, class: "w-full border-none" } %>
+  </div>
+  <hr class="text-gray-300 ms-2"/>
+
+  <div class="field">
     <% current_user.groups.each do |group| %>
       <div class="p-2 bg-white">
         <%= check_box_tag "expense[group_ids][]",
