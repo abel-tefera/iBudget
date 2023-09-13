@@ -24,6 +24,16 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Fertigo Pro Script W03 Regular";
+  src: url("https://db.onlinewebfonts.com/t/74664495dd5c6bda81a3919d75ed353f.eot");
+  src: url("https://db.onlinewebfonts.com/t/74664495dd5c6bda81a3919d75ed353f.eot?#iefix")format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/74664495dd5c6bda81a3919d75ed353f.woff2")format("woff2"),
+  url("https://db.onlinewebfonts.com/t/74664495dd5c6bda81a3919d75ed353f.woff")format("woff"),
+  url("https://db.onlinewebfonts.com/t/74664495dd5c6bda81a3919d75ed353f.ttf")format("truetype"),
+  url("https://db.onlinewebfonts.com/t/74664495dd5c6bda81a3919d75ed353f.svg#Fertigo Pro Script W03 Regular")format("svg");
+}
+
 /*
 
 @layer components {
