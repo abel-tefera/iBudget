@@ -21,7 +21,6 @@ module.exports = {
         'tertiary': '#434b54'
       },
       minHeight: {
-        'full': '100vh',
         '4/5': '80vh'
       }
     },

@@ -1,6 +1,6 @@
-<div class="p-3 bg-primary flex flex-row justify-between">
+<div class="p-3 bg-primary flex flex-row justify-between items-center">
   <% if defined? menu %>
-    <i class="fa-solid fa-bars"></i>
+    <i class="fa-solid fa-bars text-white"></i>
   <% else %>
     <%= link_to :back, class: "text-white" do %>
       <i class="fa-solid fa-arrow-left-long"></i>
@@ -11,6 +11,11 @@
   <% if defined? action_id %>
     <button class="text-white" type="submit" form="<%= action_id %>"><%= action_text %></button>
   <% else %>
-    <div class="w-8">&nbsp;</div>
+    <%= button_to(
+      "Log Out",
+      destroy_user_session_path,
+      method: :delete,
+      class: "text-white"
+    ) %>
   <% end %>
 </div>

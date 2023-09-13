@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>IBudget</title>
+    <title>iBudget</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= favicon_link_tag "dollar.png" %>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
@@ -13,7 +15,7 @@
     <script src="https://kit.fontawesome.com/cb64395257.js" crossorigin="anonymous"></script>
   </head>
 
-  <body class="font-proxima-nova-regular">
+  <body class="font-proxima-nova-regular bg-gray-100">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%# <main class="container mx-auto my-5 px-5 flex justify-center min-h-full"> %>
