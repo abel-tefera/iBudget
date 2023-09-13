@@ -1,35 +1,36 @@
-<%= form_with(model: group) do |form| %>
+<%= form_with(model: group, id: 'new_category', class: 'w-full') do |form| %>
   <% if group.errors.any? %>
-    <div style="color: red">
+    <div class="flex flex-col items-center mb-2" style="color: red">
       <h2><%= pluralize(group.errors.count, "error") %>
         prohibited this group from being saved:</h2>
 
       <ul>
         <% group.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+          <li># <%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field my-2">
-    <%= form.label :name %><br>
-    <%= form.text_field :name, autofocus: true, required: true, class: "w-full" %>
+  <div class="field">
+    <%= form.text_field :name,
+                    autofocus: true,
+                    required: true,
+                    placeholder: "Name",
+                    class: "w-full border-none" %>
     <% group.errors.full_messages_for(:name).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
+  <hr class="text-gray-300 ms-2"/>
 
-  <div class="field my-2">
-    <%= form.label :icon %><br>
-    <%= form.text_field :icon, required: true, class: "w-full" %>
+  <div class="field">
+    <%= form.text_field :icon,
+                    required: true,
+                    class: "w-full border-none",
+                    placeholder: "Icon" %>
     <% group.errors.full_messages_for(:icon).each do |message| %>
       <div><%= message %></div>
     <% end %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit class:
-                  "bg-black text-white py-2 px-4 rounded-sm w-full my-2 cursor-pointer border-2 hover:bg-white hover:text-black hover:border-black transition" %>
   </div>
 <% end %>
