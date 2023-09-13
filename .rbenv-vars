@@ -1,0 +1,5 @@
+# For Postgres
+DATABASE_URL=postgresql://abel:victory@127.0.0.1/iBudget
+
+RAILS_MASTER_KEY=25dded0fb469d04c4146e659153b9d1d
+SECRET_KEY_BASE=1234567890
