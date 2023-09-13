@@ -1,0 +1,16 @@
+<div class="p-3 bg-primary flex flex-row justify-between">
+  <% if defined? menu %>
+    <i class="fa-solid fa-bars"></i>
+  <% else %>
+    <%= link_to :back, class: "text-white" do %>
+      <i class="fa-solid fa-arrow-left-long"></i>
+    <% end %>
+  <% end %>
+
+  <p class='text-white uppercase'><%= title %></p>
+  <% if defined? action_id %>
+    <button class="text-white" type="submit" form="<%= action_id %>"><%= action_text %></button>
+  <% else %>
+    <div class="w-8">&nbsp;</div>
+  <% end %>
+</div>
