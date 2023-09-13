@@ -7,7 +7,7 @@ class Ability
     nil unless current_user.present?
 
     can :manage, Group, user: current_user
-    # can :manage, Expense, user: current_user
+    can :manage, Expense, author_id: current_user.id
     #   can :read, :all
     #   return unless user.admin?
     #   can :manage, :all

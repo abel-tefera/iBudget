@@ -1,14 +1,45 @@
+<%= render "shared/navbar", title: "Transactions", page: groups_path %>
+
 <div class="flex flex-col items-center">
-  <h1 class="text-6xl my-4"><%= @group.name %></h1>
-  <h2 class="text-3xl">Total || $<%= @group.total_expense %></h2>
-  <% @group.expenses.each do |expense| %>
-    <p><%= expense.name %>
-      || $<%= expense.amount %></p>
-
-    <%= button_to "Remove", group_expense_path(@group.id, expense.id), method: :delete %>
-  <% end %>
-  <%= link_to "New expense",
-  new_group_expense_path(@group),
-  class: "font-medium text-blue-600 dark:text-blue-500  hover:underline" %>
-
+  <div class="flex flex-row justify-between w-full bg-white p-4">
+    <p class="text-base text-tertiary">Total</p>
+    <p class="font-bold"><%= number_to_currency(@group.total_expense) %></p>
+  </div>
+  <div class="w-full px-4 overflow-y-scroll max-h-transactions mb-5">
+    <% @group.expenses.each do |expense| %>
+      <div
+        class="
+          flex
+          flex-row
+          py-4
+          items-center
+          border-solid
+          border
+          bg-white
+          border-gray-400
+          my-4
+          w-full
+          shadow-md
+        "
+      >
+        <div class="ms-2 w-20 text-center">
+          <i class="fa-solid fa-2xl <%=expense.icon%>"></i>
+        </div>
+        <div class="flex flex-col mx-4 self-start w-full">
+          <p class="font-medium text-tertiary text-2xl"><%= expense.name %></p>
+          <p class="text-tertiary"><%= expense.created_at.strftime("%d-%b-%Y") %>
+          </p>
+        </div>
+        <div class="me-2 mt-1 self-start font-bold">
+          <p>
+            <%= number_to_currency(expense.amount) %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
+<footer class="flex items-center p-4 bg-secondary absolute bottom-0 w-full">
+  <%= link_to "Add a Transaction",
+  new_group_expense_path(@group),
+  class: "p-4 border border-white text-white w-full text-center rounded uppercase" %>
+</footer>
