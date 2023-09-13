@@ -11,7 +11,14 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        'proxima-nova-regular': ['proxima_nova_rgregular'],
+        'proxima-nova-bold': ['proxima_nova_rgbold']
       },
+      colors: {
+        'primary': '#3778c2',
+        'secondary': '#5fb523',
+        'tertiary': '#434b54'
+      }
     },
   },
   plugins: [
