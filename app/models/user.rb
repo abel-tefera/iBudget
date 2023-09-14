@@ -9,7 +9,7 @@ class User < ApplicationRecord
 
   validates :name, presence: true
 
-  after_commit :send_welcome_email, on: :create
+  # after_commit :send_welcome_email, on: :create
 
   enum role: %i[user student staff teacher admin]
 
