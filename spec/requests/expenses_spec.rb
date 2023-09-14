@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'faker'
 
 RSpec.describe 'Expenses', type: :request do
   before(:each) do

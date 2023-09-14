@@ -41,7 +41,9 @@ RSpec.describe Expense, type: :model do
     end
 
     it {
-      should validate_uniqueness_of(:name).case_insensitive.scoped_to(:author_id).with_message('Transaction already made')
+      should validate_uniqueness_of(:name)
+        .case_insensitive.scoped_to(:author_id)
+        .with_message('Transaction already made')
     }
   end
 end
