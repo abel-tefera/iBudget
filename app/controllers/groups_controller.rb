@@ -17,7 +17,6 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
-    @group.name = @group.name.capitalize
     @group.user = current_user
 
     if @group.save
