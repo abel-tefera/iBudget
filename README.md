@@ -30,7 +30,7 @@
 
 # iBudget <a name="about-project"></a>
 
-> An elegant budgeting app to track your spendings. Built using Ruby on Rails. 
+> An elegant budgeting app to track your spending. Built using Ruby on Rails. 
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -57,11 +57,11 @@
 
 > Here's the link to my deployed project:
 
-- [Coming Soon]()
+- [iBudget](http://145.14.158.81/)
 
 ## Video Presentation <a name="video-presentation"></a>
 
-Click on this [Coming soon]() to view the video walkthrough of this project
+Click on this [Loom Link](https://www.loom.com/share/c933b31446094478ba433dd3ff644e5d?sid=90e1a8a8-c3eb-41d5-b728-f4b203cf17b1) to view the video walkthrough of this project
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -98,6 +98,10 @@ bundle install
 ```
 
 ```sh
+bundle exec rails db:create db:migrate
+```
+
+```sh
 ./bin/dev
 ```
 
@@ -121,8 +125,8 @@ rspec spec
 
 # 🔭 Future Features:
 
-- Views
-- Styling
+- Side menu
+- Desktop design
 
 ## 🤝 Contributing <a name="contributing"></a>
 
@@ -145,6 +149,8 @@ If you liked this project, give it a ⭐️ and kindly send to me an e-mail expr
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 I would like to thank Microverse for this opportunity.
+
+Original design idea by [Gregoire Vella in Behance](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
