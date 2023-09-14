@@ -4,7 +4,8 @@ class Expense < ApplicationRecord
   belongs_to :author, class_name: 'User'
 
   validates :name, presence: true
-  validates :amount, presence: true, numericality: { greater_than_or_equal_to: 0 }
+  validates :amount, presence: true, numericality: { greater_than: 0 }
+  validates_uniqueness_of :name, case_sensitive: false, scope: :author_id, message: 'Transaction already made'
 
   ICONS = {
     'fa-credit-card' => 'Credit Card',

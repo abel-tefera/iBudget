@@ -45,7 +45,7 @@
         <%= check_box_tag "expense[group_ids][]",
         group.id,
         @expense.group_ids.include?(group.id) %>
-        <%= form.label group.name %>
+        <%= form.label group.name, class: 'capitalize' %>
       </div>
     <% end %>
   </div>

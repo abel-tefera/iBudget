@@ -14,8 +14,6 @@ class ExpensesController < ApplicationController
     @expense = Expense.new(expense_params)
     @expense.author_id = current_user.id
 
-    @expense.name = @expense.name.capitalize
-
     if @expense.save
       redirect_to "/groups/#{params[:group_id]}", notice: 'Transaction was successfully created.'
     else
