@@ -117,7 +117,7 @@ rspec spec
 
 ## 👥 Authors <a name="authors"></a>
 
-### 👤 **Abel tefera**:
+### 👤 **Abel Tefera**:
 
 - GitHub: [@abel-tefera](https://github.com/abel-tefera)
 - Twitter: [@twitter](https://twitter.com/abelteferabelay)
