@@ -57,7 +57,7 @@
 
 > Here's the link to my deployed project:
 
-- [iBudget](http://145.14.158.81/)
+- [iBudget](https://ibudget.abeltb.xyz/)
 
 ## Video Presentation <a name="video-presentation"></a>
 
