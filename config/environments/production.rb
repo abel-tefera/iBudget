@@ -93,7 +93,7 @@ Rails.application.configure do
 
   # config.relative_url_root = "/iBudget"
 
-  config.action_mailer.default_url_options = { host: '145.14.158.81', port: 80 }
+  config.action_mailer.default_url_options = { host: 'https://ibudget.abeltb.xyz', port: 80 }
   config.action_mailer.perform_deliveries = true
 
   config.action_mailer.delivery_method = :smtp
